@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  angular-app:
+    image: alexandergerus/angular-graphql-apollo
+    container_name: container-ui
+    restart: always
+    networks:
+      - caddy
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+
+networks:
+  caddy:
+    external: true

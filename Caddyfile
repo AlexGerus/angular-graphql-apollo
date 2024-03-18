@@ -1,0 +1,12 @@
+{
+    email gerusakel@gmail.com
+    http_port 2015
+}
+
+alexander-gerus.com {
+    root * /var/www/html
+    file_server
+    tls {
+            on_demand
+        }
+}
