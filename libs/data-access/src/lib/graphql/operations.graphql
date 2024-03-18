@@ -1,0 +1,10 @@
+fragment CountryFields on Country {
+    code
+    name
+}
+
+query countriesList {
+    countries {
+        ...CountryFields
+    }
+}
