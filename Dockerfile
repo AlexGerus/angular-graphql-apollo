@@ -7,8 +7,6 @@ COPY pnpm-lock.yaml ./
 RUN npm install -g pnpm
 RUN npm add --global nx@latest
 
-RUN npx nx@latest init
-
 RUN pnpm i --prod
 
 ENV NX_DAEMON=false
