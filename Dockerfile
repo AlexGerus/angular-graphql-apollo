@@ -17,7 +17,7 @@ RUN pnpm run build
 
 FROM caddy:latest
 
-COPY --from=builder /usr/src/app/dist /var/www/html
+COPY --from=builder /usr/src/app/dist/angular-graphql-apollo/browser /var/www/html
 
 # Caddyfile configuration
 COPY Caddyfile /etc/caddy/Caddyfile
