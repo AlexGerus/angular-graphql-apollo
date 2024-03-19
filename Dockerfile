@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY package*.json nx.json tsconfig.base.json ./
 COPY pnpm-lock.yaml ./
 RUN npm install -g pnpm
-RUN npm install -g nx
+RUN npm add --global nx@latest
 
 RUN npx nx@latest init
 
