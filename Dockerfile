@@ -13,7 +13,7 @@ ENV NX_DAEMON=false
 
 COPY . .
 
-RUN nx run angular-graphql-apollo:build:production
+RUN pnpm run angular-graphql-apollo:build:production
 
 FROM caddy:latest
 
