@@ -4,6 +4,8 @@ services:
   angular-app:
     image: alexandergerus/angular-graphql-apollo
     container_name: container-ui
+    build:
+      context: .
     restart: unless-stopped
     networks:
       - caddy
