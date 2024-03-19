@@ -4,8 +4,6 @@ services:
   angular-app:
     image: alexandergerus/angular-graphql-apollo
     container_name: container-ui
-    build:
-      context: .
     restart: unless-stopped
     networks:
       - caddy
@@ -17,6 +15,17 @@ services:
       - "80:80"
       - "443:443"
       - "443:443/udp"
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: always
+    ports:
+      - 80:80  # Needed for the ACME HTTP-01 challenge.
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy-config:/config
+      - ./caddy-data:/data
 
 networks:
   caddy:
