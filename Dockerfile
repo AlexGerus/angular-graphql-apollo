@@ -13,7 +13,7 @@ ENV NX_DAEMON=false
 
 COPY . .
 
-RUN pnpm run build --prod
+RUN pnpm run build
 
 FROM caddy:latest
 
